@@ -17,8 +17,8 @@ Branch="master"
 Local_Dir="/var/www/axelvf/"
 
 # Do not change the lines below
-Log_Pull="/tmp/cron_git_pull_bidcom.log"
-Log_FetchHead="/tmp/cron_git_fetch_bidcom.log"
+Log_Pull="/tmp/cron_git_pull.log"
+Log_FetchHead="/tmp/cron_git_fetch.log"
 
 # Check if exists ssh keys
 if [ ! -f ~/.ssh/id_rsa ] || [ ! -f ~/.ssh/id_rsa.pub ] ; then
