@@ -3,8 +3,10 @@
 
 It's a simple bash script to automate pulls on servers
 
-## Usage
-**First time**
+## :wrench: Usage
+
+
+:rocket: **First time**
 
 Before run the first time, you need to configure some parameters in the script file:
 
@@ -15,7 +17,7 @@ Then, configure, run the script using:
 $ ./autogitpull.sh
 ```
 
-**Instalation**
+:unicorn: **Instalation**
 
 After execute the script manually without errors you can schedule the script using the following command:
 
@@ -27,18 +29,19 @@ Adding the next line (replace the script path!):
 
 `* * * * * /home/axelvf/gitpull/autogitpull.sh >/dev/null 2>&1`
 
-## Contributing
+## :blue_heart: Contributing
 
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/axelvf/gitpull/issues)
 
-## Author
+## :space_invader: Author
 
-**Made with :hearts: by Axel Vasquez**
+**Axel Vasquez**
 
-* [github/axelvf](https://github.com/axelvf)
-* [twitter/axelvf](http://twitter.com/axelvf)
+* [twitter/axelvf](https://twitter.com/axelvf)
+* [linkedin/axelvasquez](https://linkedin.com/in/axelvasquez)
 
-## License
+
+## :black_nib: License
 
 Copyright © 2017 [Axel Vasquez](https://github.com/axelvf)
 Licensed under the MIT license.
