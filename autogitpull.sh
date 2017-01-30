@@ -24,6 +24,7 @@ Log_FetchHead="/tmp/cron_git_fetch_bidcom.log"
 if [ ! -f ~/.ssh/id_rsa ] || [ ! -f ~/.ssh/id_rsa.pub ] ; then
     echo "SSH keys not found!"
     echo "Use ssh-keygen command to create key pair"
+    echo "More info: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
     exit
 fi
 
