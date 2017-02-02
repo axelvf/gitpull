@@ -4,8 +4,8 @@
 # Author: Axel Vasquez
 # Mail: axelv@squez.com.ar
 # Repo: https://github.com/axelvf/gitpull
-# Date: 2017-01-28
-# Version: 0.1
+# Date: 2017-02-01
+# Version: 0.2
 
 # Configurable Options
 Mail_From="from@domain.com"
@@ -35,6 +35,12 @@ git -C "$Local_Dir" log -p HEAD..FETCH_HEAD > $Log_FetchHead
 if [[ $(git -C "$Local_Dir" diff origin/$Branch | wc -c) -eq 0 ]]
     then echo "Up-to-date: Nothing to do"
 else
+# Verify differences between the last and new commit
+    sm=$(cat $Log_Pull)
     git -C "$Local_Dir" pull origin $Branch > $Log_Pull
-    cat $Log_Pull $Log_FetchHead | mailx -r "$Mail_From" -s "$Mail_Subject - $(date)" $Mail_To
+    smnew=$(cat $Log_Pull)
+    if [ "$sm" == "$smnew" ]
+        then echo "Same commit: Nothing to do"
+        else cat $Log_Pull $Log_FetchHead | mailx -r "$Mail_From" -s "$Mail_Subject - $(date)" $Mail_To
+    fi
 fi
