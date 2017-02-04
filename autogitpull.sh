@@ -4,12 +4,13 @@
 # Author: Axel Vasquez
 # Mail: axelv@squez.com.ar
 # Repo: https://github.com/axelvf/gitpull
-# Date: 2017-02-01
-# Version: 0.2
+# Date: 2017-02-02
+# Version: 0.4
 
 # Configurable Options
 Mail_From="from@domain.com"
 Mail_To="to@domain.com"
+Mail_Cc="cc@domain.com"
 Mail_Subject="Git: New changes detected"
 
 Git_Repo="git@github.com:axelvf/gitpull.git"
@@ -39,8 +40,8 @@ else
     sm=$(cat $Log_Pull)
     git -C "$Local_Dir" pull origin $Branch > $Log_Pull
     smnew=$(cat $Log_Pull)
-    if [ "$sm" == "$smnew" ]
+    if [ "$sm" == "$smnew" ] || [ "$smnew" == "Already up-to-date." ]
         then echo "Same commit: Nothing to do"
-        else cat $Log_Pull $Log_FetchHead | mailx -r "$Mail_From" -s "$Mail_Subject - $(date)" $Mail_To
+        else cat $Log_Pull $Log_FetchHead | mailx -r "$Mail_From" -s "$Mail_Subject - $(date)" -t $Mail_To ", $Mail_Cc"
     fi
 fi
