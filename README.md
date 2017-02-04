@@ -10,7 +10,7 @@ It's a simple bash script to automate pulls on servers
 
 Before run the first time, you need to configure some parameters in the script file:
 
-`Mail_To, Mail_From, Mail_Subject, Git_Repo, Branch, Local_Dir`
+`Mail_From, Mail_To, Mail_Cc, Mail_Subject, Git_Repo, Branch, Local_Dir`
 
 Then, configure, run the script using:
 ```sh
